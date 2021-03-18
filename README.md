@@ -1,13 +1,52 @@
-# MIMIC-III_FHIR_Transformation
+# MIMIC-III to FHIR conversion pipeline
 
-Python package to transform the MIMIC-III dataset into a flat scalable, hierarchical FHIR format.
+This code should have been accompanying [the journal article](https://arxiv.org/pdf/2006.16926.pdf).
 
-## Setup
-1. Download this repository to your machine.
-2. Navigate to the base directory 'MIMIC-III_FHIR_Transformation'.
-3. Create a new virtual environment with virtualenv or conda, or from an already existing virtual environment run 
-```bash
-pip install -e .
-```
-4. Try it out and transform MIMIC-III to the FHIR format!
-From within your script import the package and run mimic_fhir_transformation.transform_table(source_mimic_table_path, output_table path, (depending on table add auxiliary table path))
+The original code and realization are awful, incomplete, and nonworkable (see issues in the original repo).
+
+## TODO
+
++ add dtypes for `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
++ make `mimic_fhir_transformation.py` runnable and actually working code or screw it and use jupyter notebook instead
++ convert tables left behind
++ refactoring and documentation
+
+## ETL Instructions (from original repo)
+
+To Transform MIMIC-III dataset to a dataframe/CSV FHIR format please run the
+whole mimic_ETL_FHIR.ipynb Jupyter Notebook.
+
+**Note:** the goal of this thesis is to use the mimic data to train a deep learning
+model, therefore the data was kept in a CSV format and not transformed to
+JSON/XML.
+
+## Conversion scheme
+
+| MIMIC-III tables             | FHIR resource         |
+| ---------------------------- | --------------------- |
+| patients + admissions        | patient               |
+| admissions + diagnoses_icd   | encounter             |
+| icustays                     | encounter_icustays    |
+| cptevents + cptevents        | claim                 |
+| noteevents                   | diagnosticReport      |
+| inputevents_cv + d_items     | medicationDispense    |
+| inputevents_mv + d_items     | medicationDispense_mv |
+| prescriptions                | medicationRequest     |
+| chartevents + d_items        | observation_ce        |
+| datetimeevents + d_items     | observation_dte       |
+| labevents + d_labitems       | observation_le        |
+| caregivers                   | practitioner          |
+| procedures_icd               | procedure_icd9        |
+| procedureevents_mv + d_items | procedure_mv          |
+| outputevents + d_items       | specimen_oe           |
+| microbiologyevents + d_items | specimen_mbe          |
+| services                     | services              |
+
+**Following tables were not transformed or even mentioned in the code:**
+
+- CALLOUT
+- DRGCODES
+- TRANSFERS
+- D_CPT
+- D_ICD_DIAGNOSES
+- D_ICD_PROCEDURES

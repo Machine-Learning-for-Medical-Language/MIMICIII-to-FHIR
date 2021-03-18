@@ -1,10 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
 # Author: Leopold Franz (ETH Zürich)
 
 from pathlib import Path
 import pandas as pd
-import numpy as  np
+import numpy as np
 
 
 def transform_table(table_file_path, output_path, auxiliary_table_path=''):
