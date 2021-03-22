@@ -12,11 +12,11 @@ Also, authors use some keys that are absent in MIMIC-III tables and resources th
 
 ## TODO
 
-[] add dtypes for all `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
-[x] make it run on the laptop with 16GB RAM
-[x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebook instead
-[] convert tables left behind
-[] refactoring and documentation
+- [ ] add dtypes for all `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
+- [x] make it run on the laptop with 16GB RAM
+- [x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebook instead
+- [ ] convert tables left behind
+- [ ] refactoring and documentation
 
 ## ETL Instructions (from original repo)
 
