@@ -2,14 +2,21 @@
 
 This code should have been accompanying [the journal article](https://arxiv.org/pdf/2006.16926.pdf).
 
-The original code and realization are awful, incomplete, and nonworkable (see issues in the original repo).
+The original code and realization are awful, incomplete, and nonworkable (
+[1](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/1),
+[2](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/2),
+[3](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/3)
+).
+
+Also, authors use some keys that are absent in MIMIC-III tables and resources that absent in FHIR documentation (see `transform_inputevents_mv()` in the 002-kba notebook).
 
 ## TODO
 
-+ add dtypes for `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
-+ make `mimic_fhir_transformation.py` runnable and actually working code or screw it and use jupyter notebook instead
-+ convert tables left behind
-+ refactoring and documentation
+[] add dtypes for all `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
+[x] make it run on the laptop with 16GB RAM
+[x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebook instead
+[] convert tables left behind
+[] refactoring and documentation
 
 ## ETL Instructions (from original repo)
 
@@ -21,6 +28,8 @@ model, therefore the data was kept in a CSV format and not transformed to
 JSON/XML.
 
 ## Conversion scheme
+
+More details in the `mappings` folder
 
 | MIMIC-III tables             | FHIR resource         |
 | ---------------------------- | --------------------- |
