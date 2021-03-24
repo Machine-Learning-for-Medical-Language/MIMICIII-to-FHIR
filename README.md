@@ -1,6 +1,7 @@
 # MIMIC-III to FHIR conversion pipeline
 
-This code should have been accompanying [the journal article](https://arxiv.org/pdf/2006.16926.pdf).
+This repo is based on [this code](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation),
+ which should have been accompanying [this journal article](https://arxiv.org/pdf/2006.16926.pdf).
 
 The original code and realization are awful, incomplete, and nonworkable (
 [1](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/1),
@@ -8,26 +9,34 @@ The original code and realization are awful, incomplete, and nonworkable (
 [3](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/3)
 ).
 
-Also, authors use some keys that are absent in MIMIC-III tables and resources that absent in FHIR documentation (see `transform_inputevents_mv()` in the 002-kba notebook).
+Code from this repo actually works and even runs on a 16GB RAM laptop.
+
+But all mappings are from the original repo, and I am perfectly sure, that they have errors:
++ authors used some keys that are absent in MIMIC-III tables in `transform_inputevents_mv()` (002-kba-... notebook)
++ some resources absent in FHIR documentation
++ CareVue and Metavision data should be kept in a single resource
++ In the `transform_procedures_icd()` (004-kba-... notebook) authors messed up with the "followUp" feature
++ etc
+
+I've fixed some, but I did not check every mapping due to lack of time.
+
+## Usage
+
++ Download MIMIC-III dataset ad put it into the data folder
++ Run jupyter notebooks in ascending order
++ collect CSV files from `data/out/` folder
 
 ## TODO
 
-- [ ] add dtypes for all `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
+- [x] add dtypes for all `pd.read_csv()` to [avoid dtype guessing](https://stackoverflow.com/questions/24251219/pandas-read-csv-low-memory-and-dtype-options)
 - [x] make it run on the laptop with 16GB RAM
-- [x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebook instead
+- [x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebooks instead
+- [ ] check mappings
 - [ ] convert tables left behind
+- [ ] JSON output?
 - [ ] refactoring and documentation
 
-## ETL Instructions (from original repo)
-
-To Transform MIMIC-III dataset to a dataframe/CSV FHIR format please run the
-whole mimic_ETL_FHIR.ipynb Jupyter Notebook.
-
-**Note:** the goal of this thesis is to use the mimic data to train a deep learning
-model, therefore the data was kept in a CSV format and not transformed to
-JSON/XML.
-
-## Conversion scheme
+## Conversion scheme (original)
 
 More details in the `mappings` folder
 

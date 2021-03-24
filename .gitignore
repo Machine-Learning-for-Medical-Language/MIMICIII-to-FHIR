@@ -4,5 +4,6 @@ __pycache__
 *.swp
 venv
 *.csv.gz
+*.csv
 data/**/*.md
 data/**/*.txt
