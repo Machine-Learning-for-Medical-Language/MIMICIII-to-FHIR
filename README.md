@@ -1,4 +1,4 @@
-# MIMIC-III to FHIR conversion pipeline
+# [MIMIC-III](https://mimic.physionet.org/about/mimic/) to [FHIR](https://www.hl7.org/fhir/) conversion pipeline
 
 This repo is based on [this code](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation),
  which should have been accompanying [this journal article](https://arxiv.org/pdf/2006.16926.pdf).
