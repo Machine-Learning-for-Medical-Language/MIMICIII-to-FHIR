@@ -64,7 +64,7 @@ More details in the `mappings` folder
 
 - [CALLOUT](https://mimic.physionet.org/mimictables/callout/) looks like something unimportant
 - [DRGCODES](https://mimic.physionet.org/mimictables/drgcodes/) feels like [it is not part of FHIR](https://www.hl7.org/fhir/codesystem-ex-diagnosisrelatedgroup.html), [the full registry of code systems defined as part of FHIR](https://www.hl7.org/fhir/terminologies-systems.html)
-- **[TRANSFERS](https://mimic.physionet.org/mimictables/transfers/) should be in [encounters](https://www.hl7.org/fhir/encounter.html)?**
+- **[TRANSFERS](https://mimic.physionet.org/mimictables/transfers/) should be in [encounters](https://www.hl7.org/fhir/encounter.html)?** but it's values are not in [FHIR value set](https://www.hl7.org/fhir/valueset-encounter-admit-source.html)
 - [D_CPT](https://mimic.physionet.org/mimictables/d_cpt/) [not normative yet](https://www.hl7.org/fhir/cpt.html)
 - [D_ICD_DIAGNOSES](https://mimic.physionet.org/mimictables/d_icd_diagnoses/) just ICD9 codes reference table
 - [D_ICD_PROCEDURES](https://mimic.physionet.org/mimictables/d_icd_procedures/) just ICD9 codes reference table
