@@ -9,7 +9,7 @@ The original code and realization are awful, incomplete, and nonworkable (
 [3](https://github.com/leopold-franz/MIMIC-III_FHIR_Transformation/issues/3)
 ).
 
-Code from this repo actually works and even runs on a 16GB RAM laptop.
+Code from this repo actually runs without crashes, even on a 16GB RAM laptop.
 
 But all mappings are from the original repo, and I am perfectly sure, that they have errors:
 + authors used some keys that are absent in MIMIC-III tables in `transform_inputevents_mv()` (002-kba-... notebook)
