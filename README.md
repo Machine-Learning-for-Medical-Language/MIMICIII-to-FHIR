@@ -32,7 +32,7 @@ I've fixed some, but I did not check every mapping due to lack of time.
 - [x] make it run on the laptop with 16GB RAM
 - [x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebooks instead
 - [ ] check mappings
-- [ ] convert tables left behind
+- [ ] convert tables left behind (if they need to be converted at all)
 - [ ] JSON output?
 - [ ] refactoring and documentation
 
