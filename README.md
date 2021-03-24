@@ -32,7 +32,7 @@ I've fixed some, but I did not check every mapping due to lack of time.
 - [x] make it run on the laptop with 16GB RAM
 - [x] ~~make `mimic_fhir_transformation.py` runnable and actually working code or~~ screw it and use jupyter notebooks instead
 - [ ] check mappings
-- [ ] convert tables left behind (if they need to be converted at all)
+- [ ] convert TRANSFERS table (should be part of encounter)
 - [ ] JSON output?
 - [ ] refactoring and documentation
 
@@ -62,9 +62,9 @@ More details in the `mappings` folder
 
 **Following tables were not transformed or even mentioned in the code:**
 
-- CALLOUT
-- DRGCODES
-- TRANSFERS
-- D_CPT
-- D_ICD_DIAGNOSES
-- D_ICD_PROCEDURES
+- [CALLOUT](https://mimic.physionet.org/mimictables/callout/) looks like something unimportant
+- [DRGCODES](https://mimic.physionet.org/mimictables/drgcodes/) feels like [it is not part of FHIR](https://www.hl7.org/fhir/codesystem-ex-diagnosisrelatedgroup.html), [the full registry of code systems defined as part of FHIR](https://www.hl7.org/fhir/terminologies-systems.html)
+- **[TRANSFERS](https://mimic.physionet.org/mimictables/transfers/) should be in [encounters](https://www.hl7.org/fhir/encounter.html)**
+- [D_CPT](https://mimic.physionet.org/mimictables/d_cpt/) [not normative yet](https://www.hl7.org/fhir/cpt.html)
+- [D_ICD_DIAGNOSES](https://mimic.physionet.org/mimictables/d_icd_diagnoses/) just ICD9 codes reference table
+- [D_ICD_PROCEDURES](https://mimic.physionet.org/mimictables/d_icd_procedures/) just ICD9 codes reference table
